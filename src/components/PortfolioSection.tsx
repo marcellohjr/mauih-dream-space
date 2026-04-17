@@ -1,13 +1,5 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import kitchenImg from "@/assets/portfolio-kitchen.jpg";
-import bedroomImg from "@/assets/portfolio-bedroom.jpg";
-import kidsImg from "@/assets/portfolio-kids.jpg";
-import bathroomImg from "@/assets/portfolio-bathroom.jpg";
-import terraceImg from "@/assets/portfolio-terrace.jpg";
-import diningImg from "@/assets/portfolio-dining.jpg";
-import officeImg from "@/assets/portfolio-office.jpg";
-import heroImg from "@/assets/hero-living.jpg";
 import viviane1 from "@/assets/viviane-1.jpg";
 import viviane2 from "@/assets/viviane-2.jpg";
 import viviane3 from "@/assets/viviane-3.jpg";
@@ -16,21 +8,10 @@ import viviane4 from "@/assets/viviane-4.jpg";
 type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
 
 const projects = [
-  { name: "Luana e Caio", img: heroImg, cat: "Residencial" as const },
-  { name: "Priscila e Douglas", img: kitchenImg, cat: "Residencial" as const },
-  { name: "Camila e Binho", img: bedroomImg, cat: "Residencial" as const },
-  { name: "Carol e Ricardo", img: diningImg, cat: "Residencial" as const },
-  { name: "Nathalia Atibaia", img: bathroomImg, cat: "Residencial" as const },
-  { name: "Quartinho Maria Luiza", img: kidsImg, cat: "Quartos Infantis" as const },
-  { name: "Quartinho Martina", img: kidsImg, cat: "Quartos Infantis" as const },
-  { name: "Apto Karina Central Park", img: officeImg, cat: "Residencial" as const },
   { name: "Viviane", img: viviane1, cat: "Residencial" as const },
   { name: "Viviane", img: viviane2, cat: "Residencial" as const },
   { name: "Viviane", img: viviane3, cat: "Residencial" as const },
   { name: "Viviane", img: viviane4, cat: "Residencial" as const },
-  { name: "Casa Atibaia", img: terraceImg, cat: "Áreas Externas" as const },
-  { name: "Giovanna e Erico", img: bedroomImg, cat: "Residencial" as const },
-  { name: "Patricia", img: diningImg, cat: "Residencial" as const },
 ];
 
 const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
