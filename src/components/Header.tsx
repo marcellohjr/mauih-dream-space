@@ -37,7 +37,9 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="font-sans-modern text-sm tracking-wider text-foreground/70 hover:text-primary transition-colors duration-300 uppercase"
+              className={`font-sans-modern text-sm tracking-wider transition-colors duration-300 uppercase ${
+                scrolled ? "text-foreground/70 hover:text-primary" : "text-white hover:text-secondary"
+              }`}
             >
               {item.label}
             </a>
@@ -50,9 +52,9 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          <span className={`block w-6 h-0.5 bg-primary transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-primary transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-primary transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-primary" : "bg-white"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-primary" : "bg-white"} ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-primary" : "bg-white"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
