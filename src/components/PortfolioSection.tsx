@@ -4,6 +4,12 @@ import viviane1 from "@/assets/viviane-1.jpg";
 import viviane2 from "@/assets/viviane-2.jpg";
 import viviane3 from "@/assets/viviane-3.jpg";
 import viviane4 from "@/assets/viviane-4.jpg";
+import priscila1 from "@/assets/priscila-1.jpg";
+import priscila2 from "@/assets/priscila-2.jpg";
+import priscila3 from "@/assets/priscila-3.jpg";
+import priscila4 from "@/assets/priscila-4.jpg";
+import priscila5 from "@/assets/priscila-5.jpg";
+import priscila6 from "@/assets/priscila-6.jpg";
 
 type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
 
@@ -12,6 +18,12 @@ const projects = [
   { name: "Viviane", img: viviane2, cat: "Residencial" as const },
   { name: "Viviane", img: viviane3, cat: "Residencial" as const },
   { name: "Viviane", img: viviane4, cat: "Residencial" as const },
+  { name: "Priscila", img: priscila1, cat: "Residencial" as const },
+  { name: "Priscila", img: priscila2, cat: "Residencial" as const },
+  { name: "Priscila", img: priscila3, cat: "Residencial" as const },
+  { name: "Priscila", img: priscila4, cat: "Residencial" as const },
+  { name: "Priscila", img: priscila5, cat: "Residencial" as const },
+  { name: "Priscila", img: priscila6, cat: "Residencial" as const },
 ];
 
 const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
