@@ -64,7 +64,7 @@ export default function PortfolioSection() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActive(cat)}
+                onClick={() => handleCategoryChange(cat)}
                 className={`font-sans-modern text-xs tracking-widest uppercase px-5 py-2 transition-all duration-300 ${
                   active === cat
                     ? "bg-primary text-primary-foreground"
@@ -78,7 +78,7 @@ export default function PortfolioSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.map((project, i) => (
+          {visibleProjects.map((project, i) => (
             <div key={`${project.name}-${i}`} className="group relative overflow-hidden aspect-[4/3] cursor-pointer">
               <img
                 src={project.img}
@@ -95,6 +95,17 @@ export default function PortfolioSection() {
             </div>
           ))}
         </div>
+
+        {visibleCount < filtered.length && (
+          <div className="flex justify-center mt-12">
+            <button
+              onClick={() => setVisibleCount((c) => c + INITIAL_COUNT)}
+              className="font-sans-modern text-xs tracking-widest uppercase px-8 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+            >
+              Carregar mais
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
