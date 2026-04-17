@@ -11,7 +11,7 @@ export default function HeroSection() {
         width={1920}
         height={1080}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(20,40%,15%)]/40 via-[hsl(20,40%,15%)]/30 to-[hsl(20,40%,15%)]/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(20,40%,15%)]/55 via-[hsl(20,40%,15%)]/45 to-[hsl(20,40%,15%)]/70" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <img src={logoPink} alt="Mauih" className="h-16 md:h-20 mx-auto mb-8 animate-fade-in" />
