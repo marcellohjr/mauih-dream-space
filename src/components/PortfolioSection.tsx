@@ -38,11 +38,20 @@ const projects = [
 
 const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
 
+const INITIAL_COUNT = 6;
+
 export default function PortfolioSection() {
   const [active, setActive] = useState<Category>("Todos");
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
   const { ref, isVisible } = useScrollReveal();
 
   const filtered = active === "Todos" ? projects : projects.filter((p) => p.cat === active);
+  const visibleProjects = filtered.slice(0, visibleCount);
+
+  const handleCategoryChange = (cat: Category) => {
+    setActive(cat);
+    setVisibleCount(INITIAL_COUNT);
+  };
 
   return (
     <section id="portfolio" className="section-padding bg-offwhite">
