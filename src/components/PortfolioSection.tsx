@@ -8,6 +8,10 @@ import terraceImg from "@/assets/portfolio-terrace.jpg";
 import diningImg from "@/assets/portfolio-dining.jpg";
 import officeImg from "@/assets/portfolio-office.jpg";
 import heroImg from "@/assets/hero-living.jpg";
+import viviane1 from "@/assets/viviane-1.jpg";
+import viviane2 from "@/assets/viviane-2.jpg";
+import viviane3 from "@/assets/viviane-3.jpg";
+import viviane4 from "@/assets/viviane-4.jpg";
 
 type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
 
@@ -20,7 +24,10 @@ const projects = [
   { name: "Quartinho Maria Luiza", img: kidsImg, cat: "Quartos Infantis" as const },
   { name: "Quartinho Martina", img: kidsImg, cat: "Quartos Infantis" as const },
   { name: "Apto Karina Central Park", img: officeImg, cat: "Residencial" as const },
-  { name: "Varanda Camila", img: terraceImg, cat: "Áreas Externas" as const },
+  { name: "Viviane", img: viviane1, cat: "Residencial" as const },
+  { name: "Viviane", img: viviane2, cat: "Residencial" as const },
+  { name: "Viviane", img: viviane3, cat: "Residencial" as const },
+  { name: "Viviane", img: viviane4, cat: "Residencial" as const },
   { name: "Casa Atibaia", img: terraceImg, cat: "Áreas Externas" as const },
   { name: "Giovanna e Erico", img: bedroomImg, cat: "Residencial" as const },
   { name: "Patricia", img: diningImg, cat: "Residencial" as const },
