@@ -10,6 +10,11 @@ import priscila3 from "@/assets/priscila-3.jpg";
 import priscila4 from "@/assets/priscila-4.jpg";
 import priscila5 from "@/assets/priscila-5.jpg";
 import priscila6 from "@/assets/priscila-6.jpg";
+import luaneCaio1 from "@/assets/luane-caio-1.jpg";
+import luaneCaio2 from "@/assets/luane-caio-2.jpg";
+import luaneCaio3 from "@/assets/luane-caio-3.jpg";
+import luaneCaio4 from "@/assets/luane-caio-4.jpg";
+import luaneCaio5 from "@/assets/luane-caio-5.jpg";
 
 type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
 
@@ -24,6 +29,11 @@ const projects = [
   { name: "Priscila", img: priscila4, cat: "Residencial" as const },
   { name: "Priscila", img: priscila5, cat: "Residencial" as const },
   { name: "Priscila", img: priscila6, cat: "Residencial" as const },
+  { name: "Luane e Caio", img: luaneCaio1, cat: "Residencial" as const },
+  { name: "Luane e Caio", img: luaneCaio2, cat: "Residencial" as const },
+  { name: "Luane e Caio", img: luaneCaio3, cat: "Residencial" as const },
+  { name: "Luane e Caio", img: luaneCaio4, cat: "Residencial" as const },
+  { name: "Luane e Caio", img: luaneCaio5, cat: "Residencial" as const },
 ];
 
 const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
