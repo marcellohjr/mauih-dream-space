@@ -1,12 +1,10 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import img1 from "@/assets/portfolio-kitchen.jpg";
-import img2 from "@/assets/portfolio-bedroom.jpg";
-import img3 from "@/assets/portfolio-bathroom.jpg";
-import img4 from "@/assets/portfolio-dining.jpg";
-import img5 from "@/assets/portfolio-kids.jpg";
-import img6 from "@/assets/portfolio-terrace.jpg";
+import img1 from "@/assets/viviane-1.jpg";
+import img2 from "@/assets/viviane-2.jpg";
+import img3 from "@/assets/viviane-3.jpg";
+import img4 from "@/assets/viviane-4.jpg";
 
-const posts = [img1, img2, img3, img4, img5, img6];
+const posts = [img1, img2, img3, img4, img1, img2];
 
 export default function InstagramSection() {
   const { ref, isVisible } = useScrollReveal();
