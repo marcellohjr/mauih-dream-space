@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import logoBrown from "@/assets/mauih_brown.png";
+import logoWhite from "@/assets/mauih_white.png";
 
 const navItems = [
   { label: "Início", href: "#hero" },
@@ -27,8 +28,18 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#hero">
-          <img src={logoBrown} alt="Mauih Arquitetura" className="h-10 md:h-12" />
+        <a href="#hero" className="relative h-10 md:h-12 block" aria-label="Mauih Arquitetura">
+          <img
+            src={logoWhite}
+            alt="Mauih Arquitetura"
+            className={`h-10 md:h-12 transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-100"}`}
+          />
+          <img
+            src={logoBrown}
+            alt=""
+            aria-hidden="true"
+            className={`h-10 md:h-12 absolute inset-0 transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"}`}
+          />
         </a>
 
         {/* Desktop nav */}
