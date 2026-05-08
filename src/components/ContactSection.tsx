@@ -68,6 +68,12 @@ export default function ContactSection() {
               href="https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                const url = "https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21";
+                const win = window.open(url, "_blank", "noopener,noreferrer");
+                if (!win) (window.top || window).location.href = url;
+              }}
               className="inline-flex items-center gap-3 bg-green-600 text-primary-foreground px-8 py-4 font-sans-modern text-sm tracking-widest uppercase hover:bg-green-700 transition-all duration-300"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
