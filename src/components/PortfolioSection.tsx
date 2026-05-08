@@ -19,6 +19,8 @@ import miguelDuda1 from "@/assets/miguel-duda-1.jpg";
 import miguelDuda2 from "@/assets/miguel-duda-2.jpg";
 import miguelDuda3 from "@/assets/miguel-duda-3.jpg";
 import miguelDuda4 from "@/assets/miguel-duda-4.jpg";
+import helena1 from "@/assets/helena-1.jpg";
+import helena2 from "@/assets/helena-2.jpg";
 
 type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
 
@@ -42,6 +44,8 @@ const projects = [
   { name: "Miguel e Duda", img: miguelDuda2, cat: "Quartos Infantis" as const },
   { name: "Miguel e Duda", img: miguelDuda3, cat: "Quartos Infantis" as const },
   { name: "Miguel e Duda", img: miguelDuda4, cat: "Quartos Infantis" as const },
+  { name: "Quarto Helena", img: helena1, cat: "Quartos Infantis" as const },
+  { name: "Quarto Helena", img: helena2, cat: "Quartos Infantis" as const },
 ];
 
 const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
