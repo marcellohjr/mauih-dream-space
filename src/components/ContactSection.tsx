@@ -8,7 +8,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Olá! Meu nome é ${form.name}. Tenho interesse em um projeto de ${form.projectType}. Meu telefone: ${form.phone}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://api.whatsapp.com/send?phone=5511989569045&text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (
@@ -65,7 +65,7 @@ export default function ContactSection() {
           <div className="flex flex-col justify-center items-center text-center gap-6">
             <p className="font-serif text-2xl text-primary">Prefere falar diretamente?</p>
             <a
-              href="https://wa.me/5511999999999"
+              href="https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-green-600 text-primary-foreground px-8 py-4 font-sans-modern text-sm tracking-widest uppercase hover:bg-green-700 transition-all duration-300"
