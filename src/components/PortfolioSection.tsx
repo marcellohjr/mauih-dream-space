@@ -15,6 +15,10 @@ import luaneCaio2 from "@/assets/luane-caio-2.jpg";
 import luaneCaio3 from "@/assets/luane-caio-3.jpg";
 import luaneCaio4 from "@/assets/luane-caio-4.jpg";
 import luaneCaio5 from "@/assets/luane-caio-5.jpg";
+import miguelDuda1 from "@/assets/miguel-duda-1.jpg";
+import miguelDuda2 from "@/assets/miguel-duda-2.jpg";
+import miguelDuda3 from "@/assets/miguel-duda-3.jpg";
+import miguelDuda4 from "@/assets/miguel-duda-4.jpg";
 
 type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
 
@@ -34,6 +38,10 @@ const projects = [
   { name: "Luane e Caio", img: luaneCaio3, cat: "Residencial" as const },
   { name: "Luane e Caio", img: luaneCaio4, cat: "Residencial" as const },
   { name: "Luane e Caio", img: luaneCaio5, cat: "Residencial" as const },
+  { name: "Miguel e Duda", img: miguelDuda1, cat: "Quartos Infantis" as const },
+  { name: "Miguel e Duda", img: miguelDuda2, cat: "Quartos Infantis" as const },
+  { name: "Miguel e Duda", img: miguelDuda3, cat: "Quartos Infantis" as const },
+  { name: "Miguel e Duda", img: miguelDuda4, cat: "Quartos Infantis" as const },
 ];
 
 const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
