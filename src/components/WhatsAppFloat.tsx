@@ -1,9 +1,22 @@
+const WHATSAPP_URL =
+  "https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21";
+
 export default function WhatsAppFloat() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const win = window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
+    if (!win) {
+      // Popup blocked (e.g. preview iframe) — fall back to top-level navigation
+      window.top ? (window.top.location.href = WHATSAPP_URL) : (window.location.href = WHATSAPP_URL);
+    }
+  };
+
   return (
     <a
-      href="https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       aria-label="WhatsApp"
       className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
     >
