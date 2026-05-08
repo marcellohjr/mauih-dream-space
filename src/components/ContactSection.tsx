@@ -8,7 +8,9 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `Olá! Meu nome é ${form.name}. Tenho interesse em um projeto de ${form.projectType}. Meu telefone: ${form.phone}`;
-    window.open(`https://api.whatsapp.com/send?phone=5511989569045&text=${encodeURIComponent(msg)}`, "_blank");
+    const url = `https://api.whatsapp.com/send?phone=5511989569045&text=${encodeURIComponent(msg)}`;
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+    if (!win) (window.top || window).location.href = url;
   };
 
   return (
