@@ -1,14 +1,17 @@
 const WHATSAPP_URL =
   "https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21";
 
+function openWhatsApp(url: string) {
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if (!win) {
+    window.location.href = url;
+  }
+}
+
 export default function WhatsAppFloat() {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const win = window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
-    if (!win) {
-      // Popup blocked (e.g. preview iframe) — fall back to top-level navigation
-      window.top ? (window.top.location.href = WHATSAPP_URL) : (window.location.href = WHATSAPP_URL);
-    }
+    openWhatsApp(WHATSAPP_URL);
   };
 
   return (
