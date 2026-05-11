@@ -3,11 +3,12 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21";
 
-function openWhatsApp(url: string) {
-  const win = window.open(url, "_blank", "noopener,noreferrer");
-  if (!win) {
-    window.location.href = url;
-  }
+function openInNewTab(url: string) {
+  const a = document.createElement("a");
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.click();
 }
 
 export default function ContactSection() {
@@ -18,7 +19,7 @@ export default function ContactSection() {
     e.preventDefault();
     const msg = `Olá! Meu nome é ${form.name}. Tenho interesse em um projeto de ${form.projectType}. Meu telefone: ${form.phone}`;
     const url = `https://api.whatsapp.com/send?phone=5511989569045&text=${encodeURIComponent(msg)}`;
-    openWhatsApp(url);
+    openInNewTab(url);
   };
 
   return (
@@ -78,10 +79,6 @@ export default function ContactSection() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                openWhatsApp(WHATSAPP_URL);
-              }}
               className="inline-flex items-center gap-3 bg-green-600 text-primary-foreground px-8 py-4 font-sans-modern text-sm tracking-widest uppercase hover:bg-green-700 transition-all duration-300"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

@@ -3,13 +3,6 @@ import logoPink from "@/assets/mauih_pink.png";
 
 const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5511989569045&text=Ol%C3%A1%2C+encontrei+o+site+no+google+e+gostaria+de+fazer+um+or%C3%A7amento%21";
 
-function openWhatsApp(url: string) {
-  const win = window.open(url, "_blank", "noopener,noreferrer");
-  if (!win) {
-    window.location.href = url;
-  }
-}
-
 export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -41,10 +34,6 @@ export default function HeroSection() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => {
-              e.preventDefault();
-              openWhatsApp(WHATSAPP_URL);
-            }}
             className="inline-block border border-primary-foreground/40 text-primary-foreground px-8 py-4 font-sans-modern text-sm tracking-widest uppercase hover:bg-primary-foreground/10 transition-all duration-300"
           >
             Falar no WhatsApp
