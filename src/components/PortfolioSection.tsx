@@ -80,14 +80,9 @@ const projects: Project[] = [
   },
 ];
 
-const categories: Category[] = ["Todos", "Residencial", "Quartos Infantis", "Áreas Externas"];
-
 export default function PortfolioSection() {
-  const [active, setActive] = useState<Category>("Todos");
   const [openProject, setOpenProject] = useState<Project | null>(null);
   const { ref, isVisible } = useScrollReveal();
-
-  const filtered = active === "Todos" ? projects : projects.filter((p) => p.category === active);
 
   return (
     <section id="portfolio" className="section-padding bg-offwhite">
@@ -101,25 +96,9 @@ export default function PortfolioSection() {
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             Portfólio
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl font-light text-primary mb-8">
+          <h2 className="font-serif text-3xl md:text-5xl font-light text-primary mb-12">
             Nossos Projetos
           </h2>
-
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`font-sans-modern text-xs tracking-widest uppercase px-5 py-2 transition-all duration-300 ${
-                  active === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-transparent text-muted-foreground hover:text-primary border border-border"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </div>
 
         <motion.div
@@ -127,7 +106,7 @@ export default function PortfolioSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filtered.map((project) => (
+            {projects.map((project) => (
               <motion.button
                 key={project.id}
                 layout
