@@ -213,13 +213,6 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
                 >
                   {fullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
                 </button>
-                <button
-                  onClick={onClose}
-                  className="p-2 rounded-full hover:bg-muted transition-colors"
-                  aria-label="Fechar"
-                >
-                  <X className="w-4 h-4" />
-                </button>
               </div>
             </div>
 
