@@ -28,12 +28,10 @@ import miguelDuda4 from "@/assets/miguel-duda-4.jpg";
 import helena1 from "@/assets/helena-1.jpg";
 import helena2 from "@/assets/helena-2.jpg";
 
-type Category = "Todos" | "Residencial" | "Quartos Infantis" | "Áreas Externas";
-
 interface Project {
   id: number;
   title: string;
-  category: Exclude<Category, "Todos">;
+  category: string;
   description: string;
   coverImage: string;
   galleryImages: string[];
