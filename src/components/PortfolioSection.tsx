@@ -74,7 +74,7 @@ const projects: Project[] = [
     id: 5,
     title: "Quarto Helena",
     category: "Quartos Infantis",
-    description: "Espaço delicado pensado para acolher e encantar.",
+    description: "Quarto infantil delicado, pensado para acolher, encantar e crescer junto.",
     coverImage: helena1,
     galleryImages: [helena1, helena2],
   },
