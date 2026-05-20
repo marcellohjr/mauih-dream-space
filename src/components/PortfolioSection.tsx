@@ -37,6 +37,15 @@ import havik7 from "@/assets/havik-7.webp";
 import havik8 from "@/assets/havik-8.webp";
 import havik9 from "@/assets/havik-9.webp";
 import havik10 from "@/assets/havik-10.webp";
+import natEdu1 from "@/assets/natalia-eduardo-1.webp";
+import natEdu2 from "@/assets/natalia-eduardo-2.webp";
+import natEdu3 from "@/assets/natalia-eduardo-3.webp";
+import natEdu4 from "@/assets/natalia-eduardo-4.webp";
+import natEdu5 from "@/assets/natalia-eduardo-5.webp";
+import natEdu6 from "@/assets/natalia-eduardo-6.webp";
+import natEdu7 from "@/assets/natalia-eduardo-7.webp";
+import natEdu8 from "@/assets/natalia-eduardo-8.webp";
+import natEdu9 from "@/assets/natalia-eduardo-9.webp";
 
 interface Project {
   id: number;
@@ -95,6 +104,14 @@ const projects: Project[] = [
     description: "Escritório corporativo sofisticado, com ambientes funcionais e design refinado.",
     coverImage: havik1,
     galleryImages: [havik1, havik2, havik3, havik4, havik5, havik6, havik7, havik8, havik9, havik10],
+  },
+  {
+    id: 7,
+    title: "Natália e Eduardo",
+    category: "Residencial",
+    description: "Residência contemporânea com ambientes integrados, iluminação acolhedora e marcenaria sob medida.",
+    coverImage: natEdu1,
+    galleryImages: [natEdu1, natEdu2, natEdu3, natEdu4, natEdu5, natEdu6, natEdu7, natEdu8, natEdu9],
   },
 ];
 
