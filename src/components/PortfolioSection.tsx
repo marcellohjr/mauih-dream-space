@@ -62,6 +62,13 @@ import karRic6 from "@/assets/karina-ricardo-6.webp";
 import karRic7 from "@/assets/karina-ricardo-7.webp";
 import karRic8 from "@/assets/karina-ricardo-8.webp";
 import karRic9 from "@/assets/karina-ricardo-9.webp";
+import patMic1 from "@/assets/patricia-michael-1.webp";
+import patMic2 from "@/assets/patricia-michael-2.webp";
+import patMic3 from "@/assets/patricia-michael-3.webp";
+import patMic4 from "@/assets/patricia-michael-4.webp";
+import patMic5 from "@/assets/patricia-michael-5.webp";
+import patMic6 from "@/assets/patricia-michael-6.webp";
+import patMic7 from "@/assets/patricia-michael-7.webp";
 
 interface Project {
   id: number;
@@ -136,6 +143,14 @@ const projects: Project[] = [
     description: "Quarto compartilhado lúdico, com marcenaria sob medida, parede de escalada e mural colorido.",
     coverImage: antMar1,
     galleryImages: [antMar1, antMar2, antMar3, antMar4, antMar5, antMar6, antMar7],
+  },
+  {
+    id: 10,
+    title: "Patrícia e Michael",
+    category: "Residencial",
+    description: "Apartamento elegante com cozinha gourmet em mármore, iluminação cênica e varanda integrada.",
+    coverImage: patMic1,
+    galleryImages: [patMic1, patMic2, patMic3, patMic4, patMic5, patMic6, patMic7],
   },
   {
     id: 9,
