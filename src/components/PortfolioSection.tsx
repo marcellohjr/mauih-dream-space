@@ -78,6 +78,9 @@ import silvana6 from "@/assets/silvana-6.webp";
 import silvana7 from "@/assets/silvana-7.webp";
 import silvana8 from "@/assets/silvana-8.webp";
 import silvana9 from "@/assets/silvana-9.webp";
+import silvana10 from "@/assets/silvana-10.webp";
+import silvana11 from "@/assets/silvana-11.webp";
+import silvana12 from "@/assets/silvana-12.webp";
 
 interface Project {
   id: number;
@@ -175,7 +178,7 @@ const projects: Project[] = [
     category: "Areas externas e Lazer",
     description: "Área de lazer completa com piscina, espaço gourmet coberto e ambientes integrados ao jardim.",
     coverImage: silvana7,
-    galleryImages: [silvana7, silvana8, silvana9, silvana1, silvana2, silvana3, silvana4, silvana5, silvana6],
+    galleryImages: [silvana7, silvana8, silvana9, silvana10, silvana11, silvana12, silvana1, silvana2, silvana3, silvana4, silvana5, silvana6],
   },
 ];
 
