@@ -53,6 +53,15 @@ import antMar4 from "@/assets/antonio-martina-4.webp";
 import antMar5 from "@/assets/antonio-martina-5.webp";
 import antMar6 from "@/assets/antonio-martina-6.webp";
 import antMar7 from "@/assets/antonio-martina-7.webp";
+import karRic1 from "@/assets/karina-ricardo-1.webp";
+import karRic2 from "@/assets/karina-ricardo-2.webp";
+import karRic3 from "@/assets/karina-ricardo-3.webp";
+import karRic4 from "@/assets/karina-ricardo-4.webp";
+import karRic5 from "@/assets/karina-ricardo-5.webp";
+import karRic6 from "@/assets/karina-ricardo-6.webp";
+import karRic7 from "@/assets/karina-ricardo-7.webp";
+import karRic8 from "@/assets/karina-ricardo-8.webp";
+import karRic9 from "@/assets/karina-ricardo-9.webp";
 
 interface Project {
   id: number;
@@ -127,6 +136,14 @@ const projects: Project[] = [
     description: "Quarto compartilhado lúdico, com marcenaria sob medida, parede de escalada e mural colorido.",
     coverImage: antMar1,
     galleryImages: [antMar1, antMar2, antMar3, antMar4, antMar5, antMar6, antMar7],
+  },
+  {
+    id: 9,
+    title: "Karina e Ricardo",
+    category: "Residencial",
+    description: "Apartamento amplo com living integrado, jardim vertical e acabamentos sofisticados.",
+    coverImage: karRic1,
+    galleryImages: [karRic1, karRic2, karRic3, karRic4, karRic5, karRic6, karRic7, karRic8, karRic9],
   },
 ];
 
