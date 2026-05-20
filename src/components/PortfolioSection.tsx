@@ -62,6 +62,13 @@ import karRic6 from "@/assets/karina-ricardo-6.webp";
 import karRic7 from "@/assets/karina-ricardo-7.webp";
 import karRic8 from "@/assets/karina-ricardo-8.webp";
 import karRic9 from "@/assets/karina-ricardo-9.webp";
+import patMic1 from "@/assets/patricia-michael-1.webp";
+import patMic2 from "@/assets/patricia-michael-2.webp";
+import patMic3 from "@/assets/patricia-michael-3.webp";
+import patMic4 from "@/assets/patricia-michael-4.webp";
+import patMic5 from "@/assets/patricia-michael-5.webp";
+import patMic6 from "@/assets/patricia-michael-6.webp";
+import patMic7 from "@/assets/patricia-michael-7.webp";
 
 interface Project {
   id: number;
