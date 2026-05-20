@@ -46,6 +46,13 @@ import natEdu6 from "@/assets/natalia-eduardo-6.webp";
 import natEdu7 from "@/assets/natalia-eduardo-7.webp";
 import natEdu8 from "@/assets/natalia-eduardo-8.webp";
 import natEdu9 from "@/assets/natalia-eduardo-9.webp";
+import antMar1 from "@/assets/antonio-martina-1.webp";
+import antMar2 from "@/assets/antonio-martina-2.webp";
+import antMar3 from "@/assets/antonio-martina-3.webp";
+import antMar4 from "@/assets/antonio-martina-4.webp";
+import antMar5 from "@/assets/antonio-martina-5.webp";
+import antMar6 from "@/assets/antonio-martina-6.webp";
+import antMar7 from "@/assets/antonio-martina-7.webp";
 
 interface Project {
   id: number;
@@ -112,6 +119,14 @@ const projects: Project[] = [
     description: "Residência contemporânea com ambientes integrados, iluminação acolhedora e marcenaria sob medida.",
     coverImage: natEdu1,
     galleryImages: [natEdu1, natEdu2, natEdu3, natEdu4, natEdu5, natEdu6, natEdu7, natEdu8, natEdu9],
+  },
+  {
+    id: 8,
+    title: "Antônio e Martina",
+    category: "Quartos Infantis",
+    description: "Quarto compartilhado lúdico, com marcenaria sob medida, parede de escalada e mural colorido.",
+    coverImage: antMar1,
+    galleryImages: [antMar1, antMar2, antMar3, antMar4, antMar5, antMar6, antMar7],
   },
 ];
 
