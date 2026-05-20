@@ -101,6 +101,27 @@ const projects: Project[] = [
 export default function PortfolioSection() {
   const [openProject, setOpenProject] = useState<Project | null>(null);
   const { ref, isVisible } = useScrollReveal();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [snaps, setSnaps] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    setSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", () => {
+      setSnaps(emblaApi.scrollSnapList());
+      onSelect();
+    });
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
     <section id="portfolio" className="section-padding bg-offwhite">
@@ -119,47 +140,81 @@ export default function PortfolioSection() {
           </h2>
         </div>
 
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        <div
+          className="relative"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Carrossel de projetos"
         >
-          <AnimatePresence mode="popLayout">
-            {projects.map((project) => (
-              <motion.button
-                key={project.id}
-                layout
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                onClick={() => setOpenProject(project)}
-                className="group text-left rounded-2xl overflow-hidden bg-card shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.15)] hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                aria-label={`Abrir galeria do projeto ${project.title}`}
-              >
-                <div className="relative overflow-hidden aspect-[4/3] bg-muted">
-                  <img
-                    src={project.coverImage}
-                    alt={project.title}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-[900ms] ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="overflow-hidden -mx-3 px-3" ref={emblaRef}>
+            <div className="flex">
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pl-6 first:pl-0 py-2"
+                >
+                  <button
+                    onClick={() => setOpenProject(project)}
+                    className="group w-full text-left rounded-2xl overflow-hidden bg-card shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.15)] hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    aria-label={`Abrir galeria do projeto ${project.title}`}
+                  >
+                    <div className="relative overflow-hidden aspect-[4/3] bg-muted">
+                      <img
+                        src={project.coverImage}
+                        alt={project.title}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-[900ms] ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+                    <div className="p-6 space-y-2">
+                      <p className="font-sans-modern text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                        {project.category}
+                      </p>
+                      <h3 className="font-serif text-2xl font-light text-primary">
+                        {project.title}
+                      </h3>
+                      <p className="font-sans-modern text-sm text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+                  </button>
                 </div>
-                <div className="p-6 space-y-2">
-                  <p className="font-sans-modern text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-                    {project.category}
-                  </p>
-                  <h3 className="font-serif text-2xl font-light text-primary">
-                    {project.title}
-                  </h3>
-                  <p className="font-sans-modern text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-              </motion.button>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={scrollPrev}
+            aria-label="Projeto anterior"
+            className="absolute -left-2 md:-left-5 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/90 backdrop-blur hover:bg-background shadow-lg transition-all"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={scrollNext}
+            aria-label="Próximo projeto"
+            className="absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/90 backdrop-blur hover:bg-background shadow-lg transition-all"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {snaps.length > 1 && (
+            <div className="flex justify-center gap-2 mt-8">
+              {snaps.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => emblaApi?.scrollTo(i)}
+                  aria-label={`Ir para slide ${i + 1}`}
+                  className={cn(
+                    "h-1.5 rounded-full transition-all duration-300",
+                    selectedIndex === i ? "w-8 bg-primary" : "w-2 bg-primary/30 hover:bg-primary/50"
+                  )}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />
