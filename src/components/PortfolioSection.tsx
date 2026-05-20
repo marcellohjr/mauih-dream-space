@@ -27,6 +27,16 @@ import miguelDuda3 from "@/assets/miguel-duda-3.jpg";
 import miguelDuda4 from "@/assets/miguel-duda-4.jpg";
 import helena1 from "@/assets/helena-1.jpg";
 import helena2 from "@/assets/helena-2.jpg";
+import havik1 from "@/assets/havik-1.webp";
+import havik2 from "@/assets/havik-2.webp";
+import havik3 from "@/assets/havik-3.webp";
+import havik4 from "@/assets/havik-4.webp";
+import havik5 from "@/assets/havik-5.webp";
+import havik6 from "@/assets/havik-6.webp";
+import havik7 from "@/assets/havik-7.webp";
+import havik8 from "@/assets/havik-8.webp";
+import havik9 from "@/assets/havik-9.webp";
+import havik10 from "@/assets/havik-10.webp";
 
 interface Project {
   id: number;
@@ -77,6 +87,14 @@ const projects: Project[] = [
     description: "Quarto infantil delicado, pensado para acolher, encantar e crescer junto.",
     coverImage: helena1,
     galleryImages: [helena1, helena2],
+  },
+  {
+    id: 6,
+    title: "Havik",
+    category: "Empresarial",
+    description: "Escritório corporativo sofisticado, com ambientes funcionais e design refinado.",
+    coverImage: havik1,
+    galleryImages: [havik1, havik2, havik3, havik4, havik5, havik6, havik7, havik8, havik9, havik10],
   },
 ];
 
