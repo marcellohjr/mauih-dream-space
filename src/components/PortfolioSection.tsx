@@ -230,16 +230,16 @@ export default function PortfolioSection() {
           aria-roledescription="carousel"
           aria-label="Carrossel de projetos"
         >
-          <div className="overflow-hidden -mx-3 px-3" ref={emblaRef}>
-            <div className="flex">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex -ml-6">
               {projects.map((project) => (
                 <div
                   key={project.id}
-                  className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pl-6 first:pl-0 py-2"
+                  className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 pl-6 py-2"
                 >
                   <button
                     onClick={() => setOpenProject(project)}
-                    className="group w-full text-left rounded-2xl overflow-hidden bg-card shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.15)] hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    className="group w-full h-full flex flex-col text-left rounded-2xl overflow-hidden bg-card shadow-[0_4px_20px_-8px_hsl(var(--primary)/0.15)] hover:shadow-[0_20px_50px_-12px_hsl(var(--primary)/0.35)] transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                     aria-label={`Abrir galeria do projeto ${project.title}`}
                   >
                     <div className="relative overflow-hidden aspect-[4/3] bg-muted">
@@ -251,7 +251,7 @@ export default function PortfolioSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
-                    <div className="p-6 space-y-2">
+                    <div className="p-6 space-y-2 flex-1 flex flex-col">
                       <p className="font-sans-modern text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
                         {project.category}
                       </p>
