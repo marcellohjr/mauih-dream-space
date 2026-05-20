@@ -69,6 +69,15 @@ import patMic4 from "@/assets/patricia-michael-4.webp";
 import patMic5 from "@/assets/patricia-michael-5.webp";
 import patMic6 from "@/assets/patricia-michael-6.webp";
 import patMic7 from "@/assets/patricia-michael-7.webp";
+import silvana1 from "@/assets/silvana-1.webp";
+import silvana2 from "@/assets/silvana-2.webp";
+import silvana3 from "@/assets/silvana-3.webp";
+import silvana4 from "@/assets/silvana-4.webp";
+import silvana5 from "@/assets/silvana-5.webp";
+import silvana6 from "@/assets/silvana-6.webp";
+import silvana7 from "@/assets/silvana-7.webp";
+import silvana8 from "@/assets/silvana-8.webp";
+import silvana9 from "@/assets/silvana-9.webp";
 
 interface Project {
   id: number;
@@ -159,6 +168,14 @@ const projects: Project[] = [
     description: "Apartamento amplo com living integrado, jardim vertical e acabamentos sofisticados.",
     coverImage: karRic1,
     galleryImages: [karRic1, karRic2, karRic3, karRic4, karRic5, karRic6, karRic7, karRic8, karRic9],
+  },
+  {
+    id: 11,
+    title: "Silvana",
+    category: "Areas externas e Lazer",
+    description: "Área de lazer completa com piscina, espaço gourmet coberto e ambientes integrados ao jardim.",
+    coverImage: silvana7,
+    galleryImages: [silvana7, silvana8, silvana9, silvana1, silvana2, silvana3, silvana4, silvana5, silvana6],
   },
 ];
 
