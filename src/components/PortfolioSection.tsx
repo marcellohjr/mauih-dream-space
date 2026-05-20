@@ -145,6 +145,14 @@ const projects: Project[] = [
     galleryImages: [antMar1, antMar2, antMar3, antMar4, antMar5, antMar6, antMar7],
   },
   {
+    id: 10,
+    title: "Patrícia e Michael",
+    category: "Residencial",
+    description: "Apartamento elegante com cozinha gourmet em mármore, iluminação cênica e varanda integrada.",
+    coverImage: patMic1,
+    galleryImages: [patMic1, patMic2, patMic3, patMic4, patMic5, patMic6, patMic7],
+  },
+  {
     id: 9,
     title: "Karina e Ricardo",
     category: "Residencial",
