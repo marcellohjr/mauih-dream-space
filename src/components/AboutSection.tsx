@@ -4,7 +4,7 @@ import marianaImg from "@/assets/architect-mariana.jpg";
 
 const stats = [
   { number: "+85", label: "Projetos desde 2020" },
-  { number: "5+", label: "Anos de experiência" },
+  { number: "14+", label: "Anos de experiência" },
   { number: "100%", label: "Dedicação ao cliente" },
 ];
 

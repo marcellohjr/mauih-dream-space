@@ -28,9 +28,6 @@ export default function ContactSection() {
         <div ref={ref} className={`text-center mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">Contato</p>
           <h2 className="font-serif text-3xl md:text-5xl font-light text-primary mb-4">Vamos transformar seu espaço?</h2>
-          <p className="font-sans-modern text-muted-foreground">
-            +85 projetos realizados · 5+ anos de experiência
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
