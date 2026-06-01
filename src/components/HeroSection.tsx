@@ -16,7 +16,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-[hsl(20,40%,8%)]/70 via-[hsl(20,40%,8%)]/60 to-[hsl(20,40%,8%)]/85" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <img src={logoPink} alt="Mauih" className="h-16 md:h-20 mx-auto mb-8 animate-fade-in" />
+        
         <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-primary-foreground leading-tight mb-6 animate-fade-up">
           Projetos que traduzem quem você é em cada detalhe
         </h1>

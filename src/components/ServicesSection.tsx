@@ -3,7 +3,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const steps = [
   { num: "01", title: "Briefing e Entendimento", desc: "Escutamos suas necessidades, estilo de vida e sonhos para o espaço." },
   { num: "02", title: "Conceito e Layout", desc: "Criamos o conceito do projeto com layout funcional e identidade visual." },
-  { num: "03", title: "Projeto 3D", desc: "Visualização realista do projeto para você sentir cada detalhe antes da obra." },
+  { num: "03", title: "Projeto 3D", desc: "Tenha a sensação de estar dentro do ambiente antes da primeira etapa da obra." },
   { num: "04", title: "Projeto Executivo", desc: "Documentação técnica completa para garantir precisão na execução." },
   { num: "05", title: "Acompanhamento", desc: "Acompanhamos toda a obra, do início ao acabamento final." },
 ];
@@ -18,7 +18,7 @@ export default function ServicesSection() {
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">Como trabalhamos</p>
           <h2 className="font-serif text-3xl md:text-5xl font-light text-primary mb-4">Nossas Etapas</h2>
           <p className="font-sans-modern text-muted-foreground max-w-xl mx-auto">
-            Processo organizado, transparente e com acompanhamento completo do início ao fim.
+            Processo organizado, transparente e com acompanhamento completo do conceito à entrega final.
           </p>
         </div>
 

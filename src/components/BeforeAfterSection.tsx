@@ -53,7 +53,7 @@ export default function BeforeAfterSection() {
           <div className="absolute top-4 right-4 bg-secondary/90 text-secondary-foreground px-3 py-1 text-xs font-sans-modern tracking-wider uppercase">Depois</div>
         </div>
 
-        <p className="text-center font-sans-modern text-sm text-muted-foreground mt-4">Cozinha Iago — Projeto completo</p>
+        
       </div>
     </section>
   );
