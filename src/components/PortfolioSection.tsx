@@ -94,7 +94,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Viviane",
+    title: "Viviane e Douglas",
     category: "Residencial",
     description: "Ambientes residenciais com atmosfera acolhedora e refinada.",
     coverImage: viviane1,
@@ -102,7 +102,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Priscila",
+    title: "Priscila e Douglas",
     category: "Residencial",
     description: "Projeto de interiores com identidade contemporânea e elegante.",
     coverImage: priscila1,
