@@ -284,7 +284,7 @@ function ProjectCarousel({
                   <h3 className="font-serif text-lg sm:text-2xl font-light text-primary">
                     {project.title}
                   </h3>
-                  <p className="font-sans-modern text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <p className="font-sans-modern text-xs sm:text-sm text-muted-foreground leading-relaxed hidden md:block">
                     {project.description}
                   </p>
                 </div>
