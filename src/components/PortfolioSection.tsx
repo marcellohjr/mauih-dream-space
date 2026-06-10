@@ -174,13 +174,17 @@ const projects: Project[] = [
   },
   {
     id: 11,
-    title: "Silvana",
+    title: "Silvana e Paulo",
     category: "Areas externas e Lazer",
     description: "Área de lazer completa com piscina, espaço gourmet coberto e ambientes integrados ao jardim.",
     coverImage: silvana7,
     galleryImages: [silvana7, silvana8, silvana9, silvana10, silvana11, silvana12, silvana1, silvana2, silvana3, silvana4, silvana5, silvana6],
   },
 ];
+
+const midpoint = Math.ceil(projects.length / 2);
+const projectsFirstHalf = projects.slice(0, midpoint);
+const projectsSecondHalf = projects.slice(midpoint);
 
 export default function PortfolioSection() {
   const [openProject, setOpenProject] = useState<Project | null>(null);
