@@ -1,53 +1,48 @@
-# Integração com Google Meu Negócio (Google Business Profile API)
+# Integração com Instagram na seção "Acompanhe nossos projetos"
 
-## ⚠️ Aviso importante antes de começarmos
+## Resposta curta
 
-A API oficial do Google Business Profile **não é uma API pública aberta**. Para usá-la, é necessário:
+Sim, é possível — mas o Instagram é **bem mais restritivo** que o Google Maps. Não existe API pública aberta: o Instagram exige autenticação OAuth do dono da conta, e a conta precisa ser **Business** ou **Creator** (não pode ser conta pessoal).
 
-1. **Solicitar acesso ao Google** através de um formulário oficial: https://developers.google.com/my-business/content/prereqs
-2. **Aprovação manual do Google** — o processo costuma levar **de algumas semanas a meses**, e pode ser negado.
-3. Após aprovado, criar credenciais OAuth 2.0 no Google Cloud Console.
-4. Apenas o **proprietário verificado** do perfil consegue acessar via API.
+## Opções disponíveis
 
-Se você ainda não tem essa aprovação, recomendo fortemente uma das alternativas (scraping via Firecrawl, widget de terceiros como Elfsight/EmbedSocial, ou atualização manual). Posso configurar qualquer uma delas em minutos, enquanto a API oficial pode levar semanas só para ter acesso.
+### Opção A — Instagram Graph API (oficial, gratuita)
+**Requisitos:**
+- Conta do Instagram da Mauih precisa ser **Business** ou **Creator** (se for pessoal, dá pra converter de graça em 1 minuto nas configurações do app)
+- Conta vinculada a uma **Página do Facebook** (obrigatório pelo Instagram, mesmo que vocês não usem o FB)
+- Criar um App no [Meta for Developers](https://developers.facebook.com) (gratuito)
+- Gerar um **Long-Lived Access Token** (válido por 60 dias, renovável automaticamente)
 
----
+**Como ficaria:**
+- Secret no Lovable Cloud: `INSTAGRAM_ACCESS_TOKEN` + `INSTAGRAM_USER_ID`
+- Edge function `instagram-feed` que busca os últimos 9 posts (foto, caption, link, data)
+- Frontend usa React Query (cache 1h) e mostra grid 3x3 com os posts reais, mantendo o design atual
+- Job opcional de cron para renovar o token a cada 50 dias
 
-## Caso queira seguir mesmo assim com a API oficial, o plano é:
+**Tempo de setup do usuário:** ~15-20 minutos no Meta Developers
 
-### 1. Pré-requisitos (você precisa fornecer)
-- Aprovação do Google para acesso à Business Profile API
-- `Client ID` e `Client Secret` do OAuth (Google Cloud Console)
-- `Refresh Token` gerado uma única vez via OAuth Playground (autorizando sua conta do Meu Negócio)
-- `Account ID` e `Location ID` do seu perfil
+### Opção B — Widget de terceiro (mais rápido, pago acima de uso básico)
+Serviços como **Elfsight**, **EmbedSocial**, **SnapWidget**, **Behold.so**:
+- Você só conecta sua conta uma vez no painel do serviço
+- Eles dão um `<script>` ou `<iframe>` para colar no site
+- Plano grátis costuma ser limitado (1 widget, marca d'água, X views/mês)
+- Comecei a perder controle visual (depende do CSS deles)
 
-### 2. Backend (Lovable Cloud + Edge Function)
-- Ativar Lovable Cloud (banco + funções serverless)
-- Criar tabela `google_reviews` para fazer cache dos depoimentos (evita atingir limite de chamadas do Google)
-  - Campos: `id`, `reviewer_name`, `reviewer_photo`, `star_rating`, `comment`, `create_time`, `synced_at`
-  - RLS: leitura pública (anon SELECT), escrita só pelo `service_role`
-- Edge Function `sync-google-reviews`:
-  - Usa o `refresh_token` para obter um `access_token`
-  - Chama `GET https://mybusiness.googleapis.com/v4/accounts/{accountId}/locations/{locationId}/reviews`
-  - Salva/atualiza os reviews no banco
-  - Pode ser disparada manualmente ou via cron
-- Secrets armazenados no Lovable Cloud: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN`, `GOOGLE_ACCOUNT_ID`, `GOOGLE_LOCATION_ID`
+**Tempo de setup:** ~5 minutos
 
-### 3. Frontend (`TestimonialsSection.tsx`)
-- Substituir o array estático por um `useQuery` (TanStack Query) que lê da tabela `google_reviews`
-- Filtrar para mostrar apenas reviews com 4-5 estrelas e que tenham comentário
-- Manter o design atual (cards escuros sobre fundo marrom, fonte serif, aspas decorativas)
-- Mostrar nome do autor, estrelas, e o texto do review
-- Fallback: se a query falhar ou não tiver dados, mostra os depoimentos estáticos atuais
-- Loading skeleton enquanto carrega
-
-### 4. Limitações conhecidas
-- A API retorna reviews em ordem cronológica, não permite filtrar por estrelas no servidor (filtramos no cliente)
-- Quota padrão: ~300 chamadas/dia — por isso o cache no banco é essencial
-- Reviews removidos pelo cliente no Google somem na próxima sincronização
-
----
+### Opção C — Manual (como está hoje)
+Você envia as fotos novas quando quiser atualizar. Custo zero, manutenção manual.
 
 ## Minha recomendação
 
-Como você é uma empresa de arquitetura/interiores buscando rapidez e baixo custo de manutenção, sugiro fortemente o **widget Elfsight Google Reviews** ou similar — instalação em 5 minutos, sincronização automática, sem espera por aprovação do Google e sem código backend. Quer que eu mostre como ficaria com um widget em vez da API oficial?
+**Opção A (API oficial)** se você quer algo que funcione de verdade no longo prazo, sem mensalidade, sem marca d'água, e mantendo o visual da landing 100% sob seu controle. O setup inicial leva ~20 min mas depois é automático.
+
+**Opção B** se você quer ligado hoje à noite e não se importa com marca d'água/limitações do plano grátis.
+
+## Próximo passo
+
+Me diz qual opção prefere. Se for a **A**, preciso confirmar:
+1. A conta @mauih_arquitetura no Instagram já é **Business/Creator** ou ainda é pessoal?
+2. Existe uma Página do Facebook vinculada?
+
+Se você não souber, posso te passar o passo a passo para verificar/configurar antes de irmos para a parte técnica.
