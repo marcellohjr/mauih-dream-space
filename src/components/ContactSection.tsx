@@ -25,7 +25,7 @@ export default function ContactSection() {
   return (
     <section id="contato" className="section-padding bg-background">
       <div className="max-w-4xl mx-auto">
-        <div ref={ref} className={`text-center mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div ref={ref} className={`text-center mb-12 ${className}`}>
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">Contato</p>
           <h2 className="font-serif text-3xl md:text-5xl font-light text-primary mb-4">Vamos transformar seu espaço?</h2>
         </div>
