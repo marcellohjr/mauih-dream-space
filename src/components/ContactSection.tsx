@@ -12,7 +12,7 @@ function openInNewTab(url: string) {
 }
 
 export default function ContactSection() {
-  const { ref, isVisible } = useScrollReveal();
+  const { ref, className } = useScrollReveal();
   const [form, setForm] = useState({ name: "", phone: "", projectType: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
