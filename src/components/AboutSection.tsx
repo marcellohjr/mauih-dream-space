@@ -17,7 +17,7 @@ export default function AboutSection() {
     <section id="sobre" className="section-padding bg-offwhite">
       <div className="max-w-6xl mx-auto">
         {/* Company */}
-        <div ref={refA} className={`text-center mb-20 transition-all duration-700 ${visA ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div ref={refA} className={`text-center mb-20 ${classA}`}>
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">Sobre nós</p>
           <h2 className="font-serif text-3xl md:text-5xl font-light text-primary mb-6">
             Arquitetura sensível, funcional e atemporal
@@ -39,7 +39,7 @@ export default function AboutSection() {
         </div>
 
         {/* History */}
-        <div ref={refB} className={`text-center mb-20 transition-all duration-700 delay-200 ${visB ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div ref={refB} className={`text-center mb-20 ${classB}`}>
           <h3 className="font-serif text-2xl md:text-3xl font-light text-primary mb-6">Nossa História</h3>
           <p className="font-sans-modern text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A Mauih nasceu da amizade e da paixão compartilhada por transformar espaços. Duas amigas
@@ -49,7 +49,7 @@ export default function AboutSection() {
         </div>
 
         {/* Architects */}
-        <div ref={refC} className={`grid md:grid-cols-2 gap-12 transition-all duration-700 delay-300 ${visC ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div ref={refC} className={`grid md:grid-cols-2 gap-12 ${classC}`}>
           {[
             {
               name: "Thaís",
