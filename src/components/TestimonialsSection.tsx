@@ -64,7 +64,7 @@ async function fetchReviews(): Promise<ReviewsResponse> {
 }
 
 export default function TestimonialsSection() {
-  const { ref, isVisible } = useScrollReveal();
+  const { ref, className } = useScrollReveal();
 
   const { data, isLoading } = useQuery({
     queryKey: ["google-reviews"],
@@ -81,12 +81,7 @@ export default function TestimonialsSection() {
   return (
     <section id="depoimentos" className="section-padding bg-primary">
       <div className="max-w-6xl mx-auto">
-        <div
-          ref={ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
+        <div ref={ref} className={`text-center mb-16 ${className}`}>
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-primary-foreground/60 mb-4">
             Depoimentos
           </p>
