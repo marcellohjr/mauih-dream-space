@@ -9,9 +9,9 @@ const stats = [
 ];
 
 export default function AboutSection() {
-  const { ref: refA, isVisible: visA } = useScrollReveal();
-  const { ref: refB, isVisible: visB } = useScrollReveal();
-  const { ref: refC, isVisible: visC } = useScrollReveal();
+  const { ref: refA, className: classA } = useScrollReveal();
+  const { ref: refB, className: classB } = useScrollReveal();
+  const { ref: refC, className: classC } = useScrollReveal();
 
   return (
     <section id="sobre" className="section-padding bg-offwhite">
