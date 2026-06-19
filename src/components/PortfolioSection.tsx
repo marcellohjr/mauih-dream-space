@@ -190,17 +190,12 @@ const projectsSecondHalf = projects.slice(midpoint);
 
 export default function PortfolioSection() {
   const [openProject, setOpenProject] = useState<Project | null>(null);
-  const { ref, isVisible } = useScrollReveal();
+  const { ref, className } = useScrollReveal();
 
   return (
     <section id="portfolio" className="section-padding bg-offwhite">
       <div className="max-w-7xl mx-auto">
-        <div
-          ref={ref}
-          className={`text-center mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-        >
+        <div ref={ref} className={`text-center mb-12 ${className}`}>
           <p className="font-sans-modern text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
             Portfólio
           </p>
