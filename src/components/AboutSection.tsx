@@ -39,7 +39,7 @@ export default function AboutSection() {
         </div>
 
         {/* History */}
-        <div ref={refB} className={`text-center mb-20 ${classB}`}>
+        <div ref={refB} className={`text-center mb-20 ${classB}`} style={{ transitionDelay: "200ms" }}>
           <h3 className="font-serif text-2xl md:text-3xl font-light text-primary mb-6">Nossa História</h3>
           <p className="font-sans-modern text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             A Mauih nasceu da amizade e da paixão compartilhada por transformar espaços. Duas amigas
@@ -49,7 +49,7 @@ export default function AboutSection() {
         </div>
 
         {/* Architects */}
-        <div ref={refC} className={`grid md:grid-cols-2 gap-12 ${classC}`}>
+        <div ref={refC} className={`grid md:grid-cols-2 gap-12 ${classC}`} style={{ transitionDelay: "300ms" }}>
           {[
             {
               name: "Thaís",
