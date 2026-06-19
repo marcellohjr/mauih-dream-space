@@ -7,7 +7,7 @@ const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5511989569045&text=Ol%
 
 export default function BeforeAfterSection() {
   const [sliderPos, setSliderPos] = useState(50);
-  const { ref, isVisible } = useScrollReveal();
+  const { ref, className } = useScrollReveal();
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
