@@ -15,5 +15,6 @@ export function useScrollReveal(threshold = 0.15) {
     return () => observer.disconnect();
   }, [threshold]);
 
-  return { ref, isVisible };
+  const className = `scroll-reveal ${isVisible ? "scroll-reveal-visible" : ""}`;
+  return { ref, isVisible, className };
 }
